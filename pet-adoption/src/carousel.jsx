@@ -34,6 +34,7 @@ class Carousel extends Component {
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
             <img
+              key={index}
               src={photo}
               alt="animal-thumbnail"
               onClick={this.handleIndexClick}
