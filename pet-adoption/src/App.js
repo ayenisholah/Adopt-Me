@@ -1,13 +1,22 @@
 import React from "react";
+import { Router, Link } from "@reach/router";
 import "./App.css";
-import SearchParams from "./components/SearchParams";
+import SearchParams from "./searchParams";
+import Details from "./details";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Adopt Me</h1>
-      <SearchParams />
-    </div>
+    <React.StrictMode>
+      <div>
+        <header>
+          <Link to="/">Adopt Me</Link>
+        </header>
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
+      </div>
+    </React.StrictMode>
   );
 }
 
